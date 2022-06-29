@@ -40,6 +40,7 @@ int search(int nums[], int size, int target) //nums是数组，size是数组的�
         } else if (nums[middle] < target) {
             left = middle + 1;	//target在右区间，所以[middle + 1, right]
         } else {	//既不在左边，也不在右边，那就是找到答案了
+            cout << "\nvalue:" << left << "," << middle << endl;
             return middle;
         }
     }
@@ -66,14 +67,18 @@ int main(int argc, char *argv[])
     // }
     {
         int arr[] = {-1,0,3,5,9,12};
-        int searchNum =  2;
+        int searchNum =  5;
+        cout << "seach index:" << search(arr, arr_len(arr), searchNum) << endl;
+    }
+    {
+        int arr[] = {-1,0,3,5,9,12};
+        int searchNum =  9;
         cout << "seach index:" << search(arr, arr_len(arr), searchNum) << endl;
     }
 
-
     {
         int arr[] = {-1,0,3,5,9,12};
-        int searchNum =  2;
+        int searchNum =  9;
         cout << "seach index:" << binarySearch(searchNum, arr, arr_len(arr)) << endl;
     }
     return 0;
