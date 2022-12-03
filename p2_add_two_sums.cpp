@@ -100,15 +100,29 @@ public:
 };
 
 int main(int argc, char *argv[]){
-    // {
-    //     //test copy
-    //     ListNode *dest;
-    //     std::vector<int> l1= {2,4,3};
-    //     ListNode *l1_head = makeArrToList(l1);
-    //     copy(&dest, &l1_head);
-    //     printListNode(dest);
-    //     return 1;
-    // }
+    {
+        //test copy
+        ListNode *dest;
+        std::vector<int> l1= {2,4,3};
+        ListNode *l1_head = makeArrToList(l1);
+
+        auto ppNode = &(l1_head);
+		while (*ppNode) {
+			auto temp = &((*ppNode)->next);
+			delete (*ppNode);
+			ppNode = temp;
+		}
+
+        // while(l1_head){
+        //     auto pNext = l1_head->next;
+        //     delete l1_head;
+        //     l1_head = nullptr;
+        //     l1_head = pNext;
+        // }
+        // copy(&dest, &l1_head);
+        // printListNode(dest);
+        return 0;
+    }
     {
         std::vector<int> l1= {2,4,3};
         ListNode *l1_head = makeArrToList(l1);
